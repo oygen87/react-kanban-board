@@ -37,7 +37,8 @@ class App extends Component {
     if (this.context.tasks) {
       todolist = this.context.tasks
         .filter(t => t.status === "todo")
-        .map(t => <Task key={t.id} id={t.id} title={t.title} content={t.content} status={t.status} color={t.color} active={t.active} />);
+        .sort((a,b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0))
+        .map(t => <Task key={t.id} id={t.id} title={t.title} content={t.content} status={t.status} color={t.color} active={t.active} />); 
 
       doinglist = this.context.tasks
         .filter(t => t.status === "doing")
