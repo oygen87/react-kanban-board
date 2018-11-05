@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+.task {
+  margin: 1rem 0;
+  padding: 1rem;
+  &.green {
+    background-color: lightgreen;
+    color: #333;
+  }
+  &.yellow {
+    background-color: yellow;
+    color: #333;
+  }
+  &.red {
+    background-color: orangered;
+    color: #333;
+  }
+}
+.navbar-header {
+  margin-bottom: 1rem;
+  .col-3 {
+    padding: 1rem;
+    border-bottom: 0.1rem solid #eee;
+  }
+}
+.app-container {
+  height: 100vh;
+}
+.task-row {
+  height: 100%;
+}
+.taskcontainer {
+  height: 100%;
+  background-color: #333;
+}
+body {
+  background-color: #333;
+  color: #eee;
+}
+.dragover {
+  border:0.5rem dashed #eee;
+}
+.tool-btn {
+  padding: 0.5rem;
+  margin-top: -1.5rem;
+  margin-left: 1rem;
+  margin-right: -1rem;
+  transition: color 0.2s;
+  cursor: pointer;
+  &:hover {
+    color: #777;
+  }
+}
