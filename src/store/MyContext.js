@@ -71,30 +71,7 @@ export class MyProvider extends Component {
                 status: "todo",
                 color: "green",
             },
-            tasks: [/*{
-                id: 1,
-                title: "hello world",
-                content: "lorem ipsum hejsan hoppas tjosan",
-                status: "todo",
-                color: "yellow",
-                active: true,
-            },
-            {
-                id: 2,
-                title: "carpe diem",
-                content: "fånga daegn frfan och fiska gädda",
-                status: "doing",
-                color: "red",
-                active: false,
-            },
-            {
-                id: 3,
-                title: "yolo",
-                content: "heja barcelona idag på tv käka chips",
-                status: "todo",
-                color: "green",
-                active: false,
-            }*/],
+            tasks: [],
             dispatch: action => {
                 this.setState(state => reducer(state, action));
             }
