@@ -29,26 +29,21 @@ class App extends Component {
       e.target.classList.remove("dragover");
     }
   }
+  getAllTaskWithStatus = (status) => {
+    return this.context.tasks
+      .filter(t => t.status === status)
+      .sort((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0))
+      .map(t => <Task key={t.id} id={t.id} title={t.title} content={t.content} status={t.status} color={t.color} active={t.active} />);
+  }
 
   render() {
     let todolist = <div></div>;
     let doinglist = <div></div>;
     let donelist = <div></div>;
     if (this.context.tasks) {
-      todolist = this.context.tasks
-        .filter(t => t.status === "todo")
-        .sort((a,b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0))
-        .map(t => <Task key={t.id} id={t.id} title={t.title} content={t.content} status={t.status} color={t.color} active={t.active} />); 
-
-      doinglist = this.context.tasks
-        .filter(t => t.status === "doing")
-        .sort((a,b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0))
-        .map(t => <Task key={t.id} id={t.id} title={t.title} content={t.content} status={t.status} color={t.color} active={t.active} />);
-
-      donelist = this.context.tasks
-        .filter(t => t.status === "done")
-        .sort((a,b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0))
-        .map(t => <Task key={t.id} id={t.id} title={t.title} content={t.content} status={t.status} color={t.color} active={t.active} />);
+      todolist = this.getAllTaskWithStatus("todo");
+      doinglist = this.getAllTaskWithStatus("doing");
+      donelist = this.getAllTaskWithStatus("done");
     }
     return (
       <div className="App">
